@@ -1,8 +1,11 @@
-package com.example.beattrack_4750;
+package com.example.beattrack;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
 
 public class signup extends AppCompatActivity {
 
@@ -10,5 +13,10 @@ public class signup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+    }
+
+    public void onSignupToClicked(View view) {
+        Intent intent = new Intent(this, login.class);
+        startActivity(intent);
     }
 }
