@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.beattrack_4750'
+    namespace 'com.example.beattrack'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.beattrack_4750"
+        applicationId "com.example.beattrack"
         minSdk 26
         targetSdk 33
         versionCode 1

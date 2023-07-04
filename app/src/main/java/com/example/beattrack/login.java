@@ -1,7 +1,4 @@
-package com.example.beattrack_4750;
-
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.beattrack;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -10,6 +7,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 
 public class login extends AppCompatActivity {
 
