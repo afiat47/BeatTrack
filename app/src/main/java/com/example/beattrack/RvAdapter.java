@@ -44,12 +44,35 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.tvDate.setText(allData.get(position).getSystolic());
-        holder.tvTime.setText(allData.get(position).getSystolic());
-        holder.tvS.setText(allData.get(position).getSystolic());
-        holder.tvD.setText(allData.get(position).getSystolic());
-        holder.tvH.setText(allData.get(position).getSystolic());
-        holder.tvC.setText(allData.get(position).getSystolic());;
+
+
+        holder.buttonDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EachData data = allData.get(holder.getAdapterPosition());
+                Intent intent = new Intent(mContext, DetailsActivity.class);
+                intent.putExtra("systolic", data.getSystolic());
+                intent.putExtra("heartRate", data.getHeartRate());
+                intent.putExtra("diastolic", data.getDiastolic());
+                intent.putExtra("date", data.getDate());
+                intent.putExtra("time", data.getTime());
+                intent.putExtra("comment", data.getComment());
+                mContext.startActivity(intent);
+            }
+        });
+
+        holder.tvS.setText(allData.get(position).getSystolic()+" mmHg");
+
+        if (Integer.parseInt(allData.get(position).getSystolic()) <90 || Integer.parseInt(allData.get(position).getSystolic())>140  ) {
+            holder.tvS.setTextColor(mContext.getResources().getColor(R.color.red));
+        }
+        holder.tvDate.setText(allData.get(position).getDate());
+        holder.tvD.setText(allData.get(position).getDiastolic());
+        if (Integer.parseInt(allData.get(position).getSystolic()) <60 || Integer.parseInt(allData.get(position).getSystolic())>90  ) {
+            holder.tvD.setTextColor(mContext.getResources().getColor(R.color.red));
+        }
+        holder.tvH.setText(allData.get(position).getHeartRate()+" bpm");
+
         holder.buttonEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,16 +102,18 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ViewHolder> {
 
     static class ViewHolder extends RecyclerView.ViewHolder{
 
-        private final TextView tvDate,tvTime,tvS, tvD, tvH, tvC;
-        private final Button buttonEdit,buttonDelete;
+        private final TextView tvS, tvDate, tvH,tvD;
+        private final Button buttonEdit,buttonDelete,buttonDetails;
+
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvDate = itemView.findViewById(R.id.Date);
-            tvTime = itemView.findViewById(R.id.Time);
+
             tvS = itemView.findViewById(R.id.systolic);
-            tvD = itemView.findViewById(R.id.dia);
+            tvDate = itemView.findViewById(R.id.Date);
             tvH = itemView.findViewById(R.id.Heart);
-            tvC = itemView.findViewById(R.id.comment);
+            tvD=itemView.findViewById(R.id.dia);
+            buttonDetails=itemView.findViewById(R.id.buttonDetails);
             buttonEdit = itemView.findViewById(R.id.edit);
             buttonDelete = itemView.findViewById(R.id.delete);
         }

@@ -1,83 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    app:cardCornerRadius="8dp"
 
-    <TextView
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:background="@drawable/bac3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Insert Data"
-        android:textSize="26dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:textColor="@color/black"
-        android:gravity="center"/>
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/systolic"
-        android:hint="Systolic Pressure(mm Hg)"
-        android:layout_marginTop="20dp"
-        android:textSize="20dp"
-        android:inputType="number"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:id="@+id/dia"
-        android:hint="Diastolic Pressure(mm Hg)"
-        android:layout_marginTop="20dp"
-        android:textSize="20dp"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:id="@+id/Heart"
-        android:hint="Heart Rate"
-        android:layout_marginTop="20dp"
-        android:textSize="20dp"
-        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="INSERT DATA"
+            android:textSize="26sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/white"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:gravity="center" />
 
-    <EditText
-        android:id="@+id/Date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:hint="date"
-        android:ems="10"
-        android:inputType="date" />
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
 
-    <EditText
-        android:id="@+id/Time"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:hint="Time"
-        android:ems="10"
-        android:inputType="time" />
-    <EditText
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/systolic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textSize="20sp"
+                android:hint="Systolic Pressure(mm Hg)" />
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/comment"
-        android:hint="Comment"
-        android:layout_marginTop="20dp"
-        android:textSize="20dp"
-        />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_marginTop="20dp"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:text="Button" />
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/dia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textSize="20sp"
+                android:hint="Diastolic Pressure(mm Hg)" />
 
-</LinearLayout>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Heart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textSize="20sp"
+                android:hint="Heart Rate" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:textSize="20sp"
+                android:hint="Date" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="time"
+                android:textSize="20sp"
+                android:hint="Time" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/comment"
+                android:layout_width="match_parent"
+                android:layout_height="106dp"
+                android:inputType="textMultiLine"
+                android:textSize="20sp"
+                android:hint="Comment" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Add"
+            style="@style/Widget.MaterialComponents.Button" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

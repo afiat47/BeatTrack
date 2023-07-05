@@ -3,7 +3,6 @@ package com.example.beattrack;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-<<<<<<< HEAD
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -24,19 +23,10 @@ import java.util.Map;
 
 public class signup extends AppCompatActivity {
     private EditText editTextName, editTextEmail, editTextPassword, editTextCP, editTextHeight, editTextWeight;
-=======
-
-import androidx.appcompat.app.AppCompatActivity;
-
-
-public class signup extends AppCompatActivity {
-
->>>>>>> main
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-<<<<<<< HEAD
 
         editTextName = findViewById(R.id.name_input_signup);
         editTextEmail = findViewById(R.id.email_input_signup);
@@ -116,12 +106,4 @@ public class signup extends AppCompatActivity {
     }
 
 
-=======
-    }
-
-    public void onSignupToClicked(View view) {
-        Intent intent = new Intent(this, login.class);
-        startActivity(intent);
-    }
->>>>>>> main
 }
