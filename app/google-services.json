@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "931788157418",
+    "firebase_url": "https://beattrack-94cfd-default-rtdb.firebaseio.com",
+    "project_id": "beattrack-94cfd",
+    "storage_bucket": "beattrack-94cfd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:931788157418:android:73cf8bb79577dfa3668293",
+        "android_client_info": {
+          "package_name": "com.example.beat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "931788157418-8tkn6jbg7jkrcemvkcfs4a23vch1q394.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxfSMXSgVeJYQrWTvDeo_e0XE9TurGcoM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "931788157418-8tkn6jbg7jkrcemvkcfs4a23vch1q394.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:931788157418:android:572e576055184ff1668293",
+        "android_client_info": {
+          "package_name": "com.example.beattrack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "931788157418-8tkn6jbg7jkrcemvkcfs4a23vch1q394.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxfSMXSgVeJYQrWTvDeo_e0XE9TurGcoM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "931788157418-8tkn6jbg7jkrcemvkcfs4a23vch1q394.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
