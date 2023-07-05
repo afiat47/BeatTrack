@@ -44,17 +44,20 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.tvDate.setText(allData.get(position).getSystolic());
-        holder.tvTime.setText(allData.get(position).getSystolic());
-        holder.tvS.setText(allData.get(position).getSystolic());
-        holder.tvD.setText(allData.get(position).getSystolic());
-        holder.tvH.setText(allData.get(position).getSystolic());
-        holder.tvC.setText(allData.get(position).getSystolic());;
+        EachData data = allData.get(position);
+
+        holder.tvDate.setText(data.getDate());
+        holder.tvTime.setText(data.getTime());
+        holder.tvS.setText(data.getSystolic());
+        holder.tvD.setText(data.getDiastolic());
+        holder.tvH.setText(data.getHeartRate());
+        holder.tvC.setText(data.getComment());
+
         holder.buttonEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext,Insert.class);
-                intent.putExtra("data",allData.get(holder.getAdapterPosition()));
+                Intent intent = new Intent(mContext, Insert.class);
+                intent.putExtra("data", data);
                 mContext.startActivity(intent);
             }
         });
@@ -66,11 +69,13 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ViewHolder> {
                     FirebaseAuth auth = FirebaseAuth.getInstance();
                     String uid = auth.getUid();
                     FirebaseDatabase.getInstance().getReference().child("data").child(uid)
-                            .child(allData.get(holder.getAdapterPosition()).getKey()).removeValue();
-                }catch (Exception ignored){}
+                            .child(data.getKey()).removeValue();
+                } catch (Exception ignored) {
+                }
             }
         });
     }
+
 
     @Override
     public int getItemCount() {
