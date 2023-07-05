@@ -46,6 +46,7 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
 
+
         holder.buttonDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,11 +74,12 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ViewHolder> {
         }
         holder.tvH.setText(allData.get(position).getHeartRate()+" bpm");
 
+
         holder.buttonEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext,Insert.class);
-                intent.putExtra("data",allData.get(holder.getAdapterPosition()));
+                Intent intent = new Intent(mContext, Insert.class);
+                intent.putExtra("data", data);
                 mContext.startActivity(intent);
             }
         });
@@ -89,11 +91,13 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ViewHolder> {
                     FirebaseAuth auth = FirebaseAuth.getInstance();
                     String uid = auth.getUid();
                     FirebaseDatabase.getInstance().getReference().child("data").child(uid)
-                            .child(allData.get(holder.getAdapterPosition()).getKey()).removeValue();
-                }catch (Exception ignored){}
+                            .child(data.getKey()).removeValue();
+                } catch (Exception ignored) {
+                }
             }
         });
     }
+
 
     @Override
     public int getItemCount() {
