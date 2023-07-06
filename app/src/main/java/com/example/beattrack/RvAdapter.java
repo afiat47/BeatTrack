@@ -56,7 +56,7 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ViewHolder> {
         }
         holder.tvDate.setText(allData.get(position).getDate());
         holder.tvD.setText(allData.get(position).getDiastolic());
-        if (Integer.parseInt(allData.get(position).getSystolic()) <60 || Integer.parseInt(allData.get(position).getSystolic())>90  ) {
+        if (Integer.parseInt(allData.get(position).getDiastolic()) <60 || Integer.parseInt(allData.get(position).getDiastolic())>90  ) {
             holder.tvD.setTextColor(mContext.getResources().getColor(R.color.red));
         }
         holder.tvH.setText(allData.get(position).getHeartRate()+" bpm");
