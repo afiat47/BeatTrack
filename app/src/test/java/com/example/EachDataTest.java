@@ -65,6 +65,7 @@ public class EachDataTest {
         String actual = eachData.getComment();
         assertEquals(expected, actual);
     }
+
 }
 
 
