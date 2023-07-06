@@ -47,20 +47,7 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ViewHolder> {
 
 
 
-        holder.buttonDetails.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EachData data = allData.get(holder.getAdapterPosition());
-                Intent intent = new Intent(mContext, DetailsActivity.class);
-                intent.putExtra("systolic", data.getSystolic());
-                intent.putExtra("heartRate", data.getHeartRate());
-                intent.putExtra("diastolic", data.getDiastolic());
-                intent.putExtra("date", data.getDate());
-                intent.putExtra("time", data.getTime());
-                intent.putExtra("comment", data.getComment());
-                mContext.startActivity(intent);
-            }
-        });
+
 
         holder.tvS.setText(allData.get(position).getSystolic()+" mmHg");
 
@@ -79,7 +66,7 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ViewHolder> {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, Insert.class);
-                intent.putExtra("data", data);
+                intent.putExtra("data",allData.get(holder.getAdapterPosition()));
                 mContext.startActivity(intent);
             }
         });
@@ -91,9 +78,24 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ViewHolder> {
                     FirebaseAuth auth = FirebaseAuth.getInstance();
                     String uid = auth.getUid();
                     FirebaseDatabase.getInstance().getReference().child("data").child(uid)
-                            .child(data.getKey()).removeValue();
+                            .child(allData.get(holder.getAdapterPosition()).getKey()).removeValue();
                 } catch (Exception ignored) {
                 }
+            }
+        });
+
+        holder.buttonDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EachData data = allData.get(holder.getAdapterPosition());
+                Intent intent = new Intent(mContext, Details.class);
+                intent.putExtra("systolic", data.getSystolic());
+                intent.putExtra("heartRate", data.getHeartRate());
+                intent.putExtra("diastolic", data.getDiastolic());
+                intent.putExtra("date", data.getDate());
+                intent.putExtra("time", data.getTime());
+                intent.putExtra("comment", data.getComment());
+                mContext.startActivity(intent);
             }
         });
     }

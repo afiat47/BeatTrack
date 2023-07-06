@@ -45,7 +45,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.384" />
 
-    <TextView
+     <TextView
         android:id="@+id/tagline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -80,7 +80,7 @@
         android:id="@+id/login_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#ba000d"
+        android:backgroundTint="#fb6971"
         android:onClick="onLoginClicked"
         android:text="Log IN"
         android:textAlignment="center"
@@ -90,6 +90,6 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.653" />
+        app:layout_constraintVertical_bias="0.654" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
