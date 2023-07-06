@@ -45,7 +45,7 @@ public class Insert extends AppCompatActivity {
         systolic=findViewById(R.id.systolic);
         diastolic=findViewById(R.id.dia);
         heart=findViewById(R.id.Heart);
-        date=findViewById(R.id.Date);
+        date=findViewById(R.id.Date2);
         time=findViewById(R.id.Time);
         comment=findViewById(R.id.comment);
 
