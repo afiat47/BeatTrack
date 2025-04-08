@@ -38,3 +38,5 @@ The BeatTrack app is open for all. Feel free to use, modify, and distribute the 
 **Authors:**
 - Afiat Khan Tahsin (GitHub: [afiat47](https://github.com/afiat47))
 - Arpita Kundu (GitHub: [arpita050](https://github.com/arpita050))
+  
+# Please Visit the [Wiki](https://github.com/afiat47/BeatTrack/wiki) for Details
